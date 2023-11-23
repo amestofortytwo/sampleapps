@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: busybox-secrets-store-deployment
-  namespace: prod
+  namespace: workloads
 spec:
   replicas: 1
   selector:
@@ -53,4 +53,4 @@ spec:
           driver: secrets-store.csi.k8s.io
           readOnly: true
           volumeAttributes:
-            secretProviderClass: "azure-kvname-user-msi" # Change this to reflect your secretProviderClass name
+            secretProviderClass: "azure-kvname-user-msi" # Change this to reflect your secretProviderClass name if you deviated from the walkthrough
